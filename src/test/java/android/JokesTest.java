@@ -117,11 +117,16 @@ public class JokesTest {
         MyJokesScreen.emptyViewCheckText();
     }
 
-    @Feature("Failed test example")
-    @Test(description = "This test was meant to fail")
-    public void failTest() {
+    @Feature("My Jokes screen")
+    @Test(description = "Check validation length on Add New Joke popup input")
+    public void myJokesNewJokeValidationTest() {
+        String tooLongString = Faker.instance().lorem().fixedString(121);
+        String trimmedString = tooLongString.substring(0, tooLongString.length() - 1);
         BottomMenu.myJokesButtonClick();
-        SettingsScreen.firstNameInputCheckVisibility();
+        MyJokesScreen.addNewJokeButtonClick();
+        MyJokesScreen.addNewJokePopupInputSendKeys(tooLongString);
+        MyJokesScreen.addNewJokePopupSaveButtonClick();
+        MyJokesScreen.jokeItemCheckText(trimmedString);
     }
 
 }
