@@ -7,6 +7,7 @@ import android.screens.MyJokesScreen;
 import android.screens.SettingsScreen;
 import android.utils.AppiumListener;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -118,6 +119,7 @@ public class JokesTest {
     }
 
     @Feature("My Jokes screen")
+    @Description("Check validation length on Add New Joke popup input (expected max length = 120 symbols)")
     @Test(description = "Check validation length on Add New Joke popup input")
     public void myJokesNewJokeValidationTest() {
         String tooLongString = Faker.instance().lorem().fixedString(121);
