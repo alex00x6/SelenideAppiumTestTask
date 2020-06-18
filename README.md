@@ -25,7 +25,7 @@ Android virtual device should be created manually, set its name to `avd.device.n
 
 For automatic launch path to android emulator must be set to `avd.emulator.path` property
 
-### How-to-run
+## How-to-run
 If `manual.launch` is set to `false` :
 
 just launch tests by executing CLI command
